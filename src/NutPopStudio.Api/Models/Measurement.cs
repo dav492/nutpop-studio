@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace NutPopStudio.Api.Models;
 
@@ -19,5 +20,6 @@ public class Measurement
     public decimal? FatMassPercentage { get; set; }
     public string? Notes { get; set; }
     public DateTime MeasurementDate { get; set; } = DateTime.UtcNow;
+    [JsonIgnore]
     public Patient? Patient { get; set; }
 }
